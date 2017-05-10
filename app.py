@@ -11,11 +11,35 @@ import urllib
 from firebase import Firebase
 import datetime
 
+
+# -> Private Library
+import skypy from skypy
+import airbnbpy from airbnbpy
+
+
+
 app = Flask(__name__, static_url_path='')
 
 @app.route('/api/v1/', methods=["GET"])
 def api_function():
 	return None
 
+
+
+"""
+Reserved for comments
+"""
+skypyConfig = {
+	"apiKey": "apiKey",
+
+}
+
+airbnbpyConfig = {
+	"apiKey": "apiKey"
+}
+
 if __name__ == '__main__':
     app.run(debug=True)
+		
+		skypy.initial_api(skypyConfig)
+		airbnbpy.initial_api(airbnbpyConfig)
