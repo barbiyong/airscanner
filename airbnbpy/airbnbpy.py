@@ -2,22 +2,23 @@ import requests
 import json
 
 
-def initial_api(config):
-    return AirBnbPy(config)
+def initial_api():
+    return AirBnbPy()
 
 
-class AirBnbPy():
+class AirBnbPy:
     """ AirBnbPy Interfaces """
 
-    def __init__(config):
+    def __init__(self):
         self.BASE_URL = "https://api.airbnb.com/v2/search_results"
-        self.API_SERVICES_URL = ""
         self.DEFAULT_CLIENT_ID = "?client_id=3092nxybyb0otqw18e8nh5nty"
-        self.apiKey = config['API_KEY']
+        self.apiKey = "915pw2pnf4h1aiguhph5gc5b2"
 
-    def get_countries(locale):
-        request_ref = self.BASE_URL + self.DEFAULT_CLIENT_ID + '&locale' + '=' + locale
-        pass
+    def get_places(location):
+        request_ref = self.BASE_URL + self.DEFAULT_CLIENT_ID + '&location' + '=' + location
+        result = requests.get(request_ref)
+        print result
+        return result
 
     def get_currencies(currency):
         request_ref = self.BASE_URL + self.DEFAULT_CLIENT_ID + '&currency' + '=' + currency
@@ -51,17 +52,3 @@ class AirBnbPy():
         request_ref = self.BASE_URL + self.DEFAULT_CLIENT_ID + '&ib' + '=' + ib
         pass
 
-    def get_browserquotes():
-        """
-        /browsequotes/v1.0/
-        {_format}/
-        {currency}/
-        {locale}/
-        {location}/
-        {guests}/
-        {price_max}/
-        {checkin}/
-        {checkout}/
-        {inboundPartialDate} <- Optimal
-        """
-        pass
