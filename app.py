@@ -17,15 +17,12 @@ import skypy from skypy
 import airbnbpy from airbnbpy
 
 
-
 app = Flask(__name__, static_url_path='')
 
 @app.route('/api/v1/', methods=["GET"])
 def api_function():
 	return None
-
-
-
+	
 """
 Reserved for comments
 """
