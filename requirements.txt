@@ -11,3 +11,4 @@ bottle
 bs4
 wit
 -e git://github.com/mikexstudios/python-firebase.git#egg=python-firebase
+skypy
